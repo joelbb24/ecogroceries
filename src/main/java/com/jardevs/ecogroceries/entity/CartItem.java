@@ -3,14 +3,14 @@ package com.jardevs.ecogroceries.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class OrderItem {
+public class CartItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    private Order order;
+    private Cart cart;
 
     @ManyToOne
     private Product product;
@@ -25,12 +25,12 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Order getOrder() {
-        return order;
+    public Cart getCart() {
+        return cart;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     public Product getProduct() {

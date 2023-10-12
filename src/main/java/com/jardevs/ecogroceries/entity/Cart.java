@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Order {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +14,8 @@ public class Order {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> items;
+    @OneToMany(mappedBy = "cart")
+    private List<CartItem> items;
 
     private double totalAmount;
     private boolean isDelivered;
@@ -36,11 +36,11 @@ public class Order {
         this.user = user;
     }
 
-    public List<OrderItem> getItems() {
+    public List<CartItem> getItems() {
         return items;
     }
 
-    public void setItems(List<OrderItem> items) {
+    public void setItems(List<CartItem> items) {
         this.items = items;
     }
 
